@@ -1,6 +1,6 @@
 function displayRepositories(event, data){
   let repos = JSON.parse(this.responseText)
-  const repoList = `<ul>${repos.map(r => '<li>' + r.name + ' - <a href="https://github.com/' + r.owner.login + '/' + r.name + '"> View </a> <a href="#" data-repo="' + r.name +'" data-user="' + r.owner.login + '" onclick="javascript:getCommits(this)"> Commits </a></li>').join('')}</ul>`
+  const repoList = `<ul>${repos.map(r => '<li>' + r.name + ' - <a href="https://github.com/' + r.owner.login + '/' + r.name + '"> View </a> <a href="#" data-repository="' + r.name +'" data-username="' + r.owner.login + '" onclick="javascript:getCommits(this)"> Commits </a></li>').join('')}</ul>`
   document.getElementById("repositories").innerHTML += repoList
 }
 
