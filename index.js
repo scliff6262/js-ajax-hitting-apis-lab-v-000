@@ -32,6 +32,6 @@ function displayBranches(){
 }
 
 function getBranches(){
-const name = el.dataset.repository
-const user = el.dataset.username
+  const name = el.dataset.repository
+  const user = el.dataset.username
 }
