@@ -34,4 +34,6 @@ function displayBranches(){
 function getBranches(){
   const name = el.dataset.repository
   const user = el.dataset.username
+  const req = new XMLHttpRequest()
+  req.addEventListener("load", displayBranches)
 }
