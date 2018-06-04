@@ -29,7 +29,7 @@ function getCommits(el) {
 
 function displayBranches(){
   const branches = JSON.parse(this.responseText)
-  const branchesList = branches.map(b => `${b.name}`)
+  const branchesList = branches.map(b => `${b.name},`)
   document.getElementById("details").innerHTML += branchesList
 }
 
