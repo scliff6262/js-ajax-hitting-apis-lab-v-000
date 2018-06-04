@@ -1,6 +1,6 @@
 function displayRepositories(event, data){
   let repos = JSON.parse(this.responseText)
-  const repoList = `<ul>${repos.map(r => '<li>' + r.name + ' - <a href="https://github.com/' + r.owner.login + '/' + r.name + '"> View </a> <a href="#" data-repository="' + r.name +'" data-username="' + r.owner.login + '" onclick="javascript:getCommits(this)"> Commits </a></li>').join('')}</ul>`
+  const repoList = `<ul>${repos.map(r => '<li>' + r.name + ' - <a href="https://github.com/' + r.owner.login + '/' + r.name + '"> View </a> <a href="#" data-repository="' + r.name +'" data-username="' + r.owner.login + '" onclick="javascript:getCommits(this)"> Commits </a><a href="#" data-repository="' + r.name +'" data-username="' + r.owner.login + '" onclick="javascript:getCommits(this)"> Branches </a></li>').join('')}</ul>`
   document.getElementById("repositories").innerHTML += repoList
 }
 
@@ -26,4 +26,12 @@ function getCommits(el) {
   req.open("GET", `https://api.github.com/repos/${user}/${name}/commits`)
   console.log(el.dataset.username)
   req.send()
+}
+
+function displayBranches(){
+  
+}
+
+function getBranches(){
+  
 }
